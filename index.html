@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f6ef">
+  <meta name="description" content="A little color. A little music. A growing memory challenge for the whole family.">
+  <title>Color Echo · A little memory magic</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./game.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <a class="brand" href="./" aria-label="Color Echo home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>color echo<span class="brand-dot">.</span></a>
+      <div class="header-right"><span class="family-label">SMALL GAME. BIG BRAIN ENERGY.</span><button id="sound" class="icon-button" aria-label="Mute sounds" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path class="sound-waves" d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></svg></button></div>
+    </header>
+    <main>
+      <section class="intro" aria-labelledby="title"><span class="eyebrow"><span></span> LET’S MAKE A LITTLE MEMORY MAGIC</span><h1 id="title">Watch. Remember.<br><span>Echo it back.</span><svg class="sparkle" viewBox="0 0 60 60" aria-hidden="true"><path d="M30 5c0 18 7 25 25 25-18 0-25 7-25 25C30 37 23 30 5 30 23 30 30 23 30 5Z"/></svg></h1><p>Follow the colors, find your rhythm.<br>One more beat with every round.</p></section>
+      <div class="play-layout">
+        <aside class="guide">
+          <div class="guide-heading"><span class="little-star" aria-hidden="true">✳</span><h2>A little how-to</h2></div>
+          <ol><li><span class="step-number">01</span><div><h3>Look & listen</h3><p>Watch the colors light up. <br>Each one has its own note.</p></div></li><li><span class="step-number">02</span><div><h3>Your turn to echo</h3><p>Tap the colors in the <br>same order.</p></div></li><li><span class="step-number">03</span><div><h3>Keep it growing</h3><p>Every round adds a color. <br>How far can you go?</p></div></li></ol>
+          <div class="tip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 18h6m-5 3h4M8 13a6 6 0 1 1 8 0c-1 1-1 2-1 3H9c0-1 0-2-1-3Z"/></svg><p>Little tip, big help<br><span>Say the colors out loud!</span></p></div>
+        </aside>
+        <section class="game" aria-label="Color Echo memory game">
+          <div class="scorebar"><div><span class="stat-label">ROUND</span><strong id="round">01</strong></div><div class="score-divider"></div><div><span class="stat-label">YOUR BEST <span aria-hidden="true">♧</span></span><strong id="best">00</strong></div><span class="game-tag" id="mode-tag">TAKE IT EASY</span></div>
+          <div class="status" role="status" aria-live="polite" aria-atomic="true"><span class="status-dot" id="status-dot"></span><div><h2 id="status-title">Ready when you are</h2><p id="status-detail">A colorful little challenge awaits.</p></div></div>
+          <div class="board" id="board" data-state="idle">
+            <button class="pad pad-purple" data-color="0" aria-label="Purple star, key 1" aria-disabled="true"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="m32 5 7.7 16.5L58 24l-13 13 3 18-16-8.5L16 55l3-18L6 24l18.3-2.5Z"/></svg><span>Purple</span><kbd>1</kbd></button>
+            <button class="pad pad-green" data-color="1" aria-label="Green circle, key 2" aria-disabled="true"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="23"/></svg><span>Green</span><kbd>2</kbd></button>
+            <button class="pad pad-orange" data-color="2" aria-label="Orange triangle, key 3" aria-disabled="true"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M28 10a4.6 4.6 0 0 1 8 0l23 40a4.6 4.6 0 0 1-4 7H9a4.6 4.6 0 0 1-4-7Z"/></svg><span>Orange</span><kbd>3</kbd></button>
+            <button class="pad pad-blue" data-color="3" aria-label="Blue diamond, key 4" aria-disabled="true"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="12" y="12" width="40" height="40" rx="5" transform="rotate(45 32 32)"/></svg><span>Blue</span><kbd>4</kbd></button>
+          </div>
+          <div class="game-controls"><button class="start-button" id="start"><span id="start-label">Let’s play</span><svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 15 15 5M5 5h10v10"/></svg></button><button class="replay-button" id="replay" disabled><span aria-hidden="true">↻</span> Replay pattern</button></div>
+          <p class="keyboard-note">Tap a color or use <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd> on your keyboard</p>
+        </section>
+        <aside class="settings"><span class="eyebrow">FIND YOUR FLOW</span><h2>Pick your pace.</h2><p class="settings-intro">Same game. Your kind of rhythm.</p><fieldset id="pace"><legend class="sr-only">Game speed</legend><label class="pace-option"><input type="radio" name="pace" value="cozy" checked><span class="pace-emoji" aria-hidden="true">☁</span><span><strong>Easy breezy</strong><small>A little extra thinking room</small></span><span class="radio-mark"></span></label><label class="pace-option"><input type="radio" name="pace" value="classic"><span class="pace-emoji" aria-hidden="true">☀</span><span><strong>In the groove</strong><small>The classic memory challenge</small></span><span class="radio-mark"></span></label><label class="pace-option"><input type="radio" name="pace" value="speedy"><span class="pace-emoji" aria-hidden="true">ϟ</span><span><strong>Lightning brain</strong><small>Quick colors. Keep up!</small></span><span class="radio-mark"></span></label></fieldset><p class="pace-hint" id="pace-hint">You can change pace between games.</p><div class="encouragement"><span aria-hidden="true">✦</span><p>Every great memory<br>starts with one little color.</p><span class="handwritten">You’ve got this!</span></div></aside>
+      </div>
+      <div class="bottom-note"><span aria-hidden="true">♡</span> Made for curious minds of every size. <span class="note-divider">/</span> No rush. Just play.</div>
+    </main>
+    <footer><span>A little play goes a long way.</span><span>LOOK. LISTEN. ECHO. REPEAT. <span class="footer-colors" aria-hidden="true">● ● ● ●</span></span></footer>
+  </div>
+</body>
+</html>
